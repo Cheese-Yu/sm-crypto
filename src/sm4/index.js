@@ -251,10 +251,11 @@ function sm4(inArray, key, cryptFlag, {
 
   // 检查 key
   if (typeof key === 'string') key = hexToArray(key)
-  if (key.length !== (128 / 8)) {
-    // key 不是 128 比特
-    throw new Error('key is invalid')
-  }
+  // 修改: 不对位数做限制
+  // if (key.length !== (128 / 8)) {
+  //   // key 不是 128 比特
+  //   throw new Error('key is invalid')
+  // }
 
   // 检查输入
   if (typeof inArray === 'string') {
